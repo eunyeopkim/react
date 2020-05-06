@@ -2,12 +2,7 @@ import React from 'react';
 
 
 export default class TaskList extends React.Component{
-    constructor(){
-        super(...arguments);
-        this.state = {
-            showDetails: false
-        }
-    }
+
 
     render(){
         let taskComponents= [];
