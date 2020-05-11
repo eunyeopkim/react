@@ -42,4 +42,18 @@
     3.2 emaillist 에서 아래->위 통신 구현해보기
     3.3 kanban-app task 추가, 삭제 구현 ?    
  
+4. Component Lifecircle
+1) methods invoked when Mounting
+    [consructor] -> [componentWillMount] (x) -> [render] -> [componentDidMount]
+
+   2) method invoked when Unmounting
+    [componentWillUnmount]
+
+   3) methods invoked when Props Changes
+    [componentWillReceiveProps] -> [shoudComponentUpdate] (x) -> [componentWillUpdate] (x) -> [render] -> [componentDidUpdate(prevProps, prevState, snapshot)]
+                                   [getSnapshotBeforeUpdate(prevProps, prevState)] : override
+
+   4) methods invoked when State Change
+                                   [shoudComponentUpdate] (x) -> [componentWillUpdate] (x) -> [render] -> [componentDidUpdate(prevProps, prevState, snapshot)]
+                                   [getSnapshotBeforeUpdate(prevProps, prevState)] : override
 </pre>
