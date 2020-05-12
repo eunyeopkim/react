@@ -21,15 +21,19 @@ export default class Card extends React.Component {
     render() {
         return (
             <div className={ styles.Card }>
-                <div className={[ styles[`SideBar--${this.props.status}`] ] } />
-                <div 
+                <div className={ styles[`SideBar--${this.props.status}`] } />
+                <div
                     className={ styles[this.state.showDetails ? 'Title--is-open' : 'Title'] } 
                     onClick={ this.onTitleClick.bind(this) }>
                     { this.props.title }
                 </div>
-                { !this.state.showDetails ? null :  <div>
-                                                    {this.props.description }
-                                                    <TaskList tasks={ this.props.tasks } />
+                { !this.state.showDetails ? null : <div>
+                                                        {this.props.description }
+                                                        <TaskList
+                                                            key={ this.props.id }
+                                                            cardId={ this.props.id } 
+                                                            tasks={ this.props.tasks } 
+                                                            taskCallbacks = {this.props.taskCallbacks } />
                                                     </div> }
           </div>
         )
