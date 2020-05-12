@@ -31,14 +31,14 @@ export default class EmaillistApp extends React.Component {
         );
     }
 
-    componentDidMount(){
+    componentDidMount() {
         console.log('EmaillistApp:componentDidMount()');
-        fetch('http://localhost:8888/data.json')
-            .then( response => response.json())
-            .then( json => this.setState({
-                emails: json
-            }))
-            .catch( err => console.error(err));
+        fetch('http://localhost:8888/emaillist')
+        .then( response => response.json())
+        .then( json => this.setState({
+            emails: json.data
+        }))
+        .catch( err => console.error( err ));
     }
 
     componentWillUnmount() {
